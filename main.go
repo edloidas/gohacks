@@ -1,13 +1,13 @@
 package main
 
 import (
-	"fmt"
 
-	// Importing local package, `gohacks` is a module name defined in `go.mod`
-	"gohacks/sections/variables"
+	// Importing local package, `github.com/edloidas/gohacks` is a module name defined in `go.mod`
+	"github.com/edloidas/gohacks/sections/functions"
+	"github.com/edloidas/gohacks/sections/variables"
 )
 
 func main() {
-	fmt.Println("Hello, World!")
 	variables.Show()
+	functions.Show()
 }

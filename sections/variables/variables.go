@@ -1,6 +1,10 @@
 // Sample module with examples of Go variables usage and initializations
 package variables
 
+import (
+	"fmt"
+)
+
 // ---------------------------------------------------------
 // Package Level (Global) Variables
 // ---------------------------------------------------------
@@ -23,37 +27,36 @@ var (
 	gC, gD string
 )
 
-// Constant (cannot be changed)
+// Exported (starts with capital letter) constant (defined with `const` keyword, cannot be changed)
 const Pi = 3.14
 
 // ---------------------------------------------------------
 // Function Level Variables
 // ---------------------------------------------------------
-func ExportedFunction() int {
+func Show() {
+	fmt.Println("/sections/variables/variables.go")
+
 	// Variables declared in function will be scoped to the function
+
+	// Constant
+	const Multiplier = 2
 
 	// Default syntax
 	var localInt int // 0
 
-	// Second return value is dropped
-	x, _ := unexportedFunction(1.0, 2.0)
-
-	// Type conversion
-	localInt = int(x)
-
-	return localInt
-}
-
-func unexportedFunction(argX, argY float64) (float64, float64) {
-	// Constant
-	const Multiplier = 2
-
 	// Short variable declaration
-	x, y := argX, argY // float inferred
+	x, y := gX, gY // float inferred
 
 	// Assignment to new value from local scope
 	x = Multiplier*x + gX
 	y += gY
 
-	return x, y
+	// Type conversion
+	localInt = int(x)
+
+	fmt.Printf("globalString: %v, globalInt: %v, globalBool: %v\n", globalString, globalInt, globalBool)
+	fmt.Printf("globalStringHello: %v\n", globalStringHello)
+	fmt.Printf("gX: %v, gY: %v, gA: %v, gB: %v, gZ: %v, gC: %v, gD: %v\n", gX, gY, gA, gB, gZ, gC, gD)
+	fmt.Printf("localInt: %v, x: %v, y: %v\n", localInt, x, y)
+	fmt.Println()
 }

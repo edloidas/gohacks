@@ -2,6 +2,10 @@
 
 A project to demonstrate the capabilities of the Go syntax, from basics to more complex things.
 
+#### Sections
+* [variables](./sections/variables/variables.go)
+* [functions](./sections/functions/functions.go)
+
 ### Commands
 
 The list of most commonly used commands are the following:
