@@ -5,6 +5,7 @@ A project to demonstrate the capabilities of the Go syntax, from basics to more 
 #### Sections
 * [variables](./sections/variables/variables.go)
 * [functions](./sections/functions/functions.go)
+* [flow](./sections/flow/flow.go)
 
 ### Commands
 

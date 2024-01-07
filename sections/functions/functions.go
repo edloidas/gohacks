@@ -74,7 +74,9 @@ func doOperation(v int, op func(int) int) int {
 // ---------------------------------------------------------
 // Exported function (available outside of this package) start with the capital letter
 func Show() {
+	fmt.Println("================================")
 	fmt.Println("/sections/functions/functions.go")
+	fmt.Println("================================")
 
 	fmt.Printf("d20: %v\n", d20())
 

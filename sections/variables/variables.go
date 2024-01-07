@@ -34,7 +34,9 @@ const Pi = 3.14
 // Function Level Variables
 // ---------------------------------------------------------
 func Show() {
+	fmt.Println("================================")
 	fmt.Println("/sections/variables/variables.go")
+	fmt.Println("================================")
 
 	// Variables declared in function will be scoped to the function
 
