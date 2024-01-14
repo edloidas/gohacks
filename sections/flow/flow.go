@@ -59,13 +59,13 @@ func switchStatement() {
 	case 10:
 		fmt.Println("switch statement with default case")
 	default:
-		fmt.Println("switch statement with default case")
+		fmt.Println("switch statement with default case (default case)")
 	}
 
 	// Switch statement with fallthrough and without condition (true by default)
 	// fallthrough will execute the next case even if it doesn't match the expression
 	switch x := 10; {
-	case x < 10:
+	case x < 11:
 		fmt.Println("switch statement with fallthrough")
 		fallthrough
 	case x < 100:

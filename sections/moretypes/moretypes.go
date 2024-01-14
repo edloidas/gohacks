@@ -181,6 +181,8 @@ func maps() {
 
 	fmt.Printf("m: %v\n", location)
 
+	// Accessing a map element returns two values instead of one
+	// The first value is the result of the lookup, the second tells us whether or not the lookup was successful
 	_, ok := location["Seattle"]
 	fmt.Printf("location[\"Seattle\"]: %v, ok: %v\n", location["Seattle"], ok)
 
@@ -209,9 +211,15 @@ func pointers() {
 	*p++       // equivalent to x++
 	fmt.Printf("x: %v, p: %v, *p: %v\n", x, p, *p)
 
-	var pNew = new(string) // p, of type *int, points to an unnamed int variable
-	*pNew = "unnamed variable"
-	fmt.Printf("pNew: %v, *pNew: %v\n", pNew, *pNew)
+	var pNewS = new(string) // p, of type *string, points to an unnamed string variable
+	*pNewS = "unnamed variable"
+	fmt.Printf("pNewS: %v, *pNewS: %v\n", pNewS, *pNewS)
+
+	var pNewSlice = new([]int) // p, of type *[]int, points to an unnamed slice variable
+	// (*pNewSlice)[1] = 100 // panic: runtime error: index out of range
+	pNewSlice = &[]int{1, 2, 3} // Taking address of slice literal and assigning it to pNewSlice
+	*pNewSlice = []int{1, 2, 3} // Assigning slice literal to the value pointed by pNewSlice
+	fmt.Printf("*pNewSlice: %v\n", *pNewSlice)
 
 	v := Vertex{1, 2}
 	pV := &v   // equivalent to pV := &Vertex{1, 2}
